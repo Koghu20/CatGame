@@ -86,31 +86,31 @@ http://bestanimations.com/Animals/Mammals/Cats/cats/cute-kitty-animated-gif-59.g
 
 **Signup.java**
 
-![A close up of a logo Description automatically generated](media/3.png)
+![](media/3.png)
 
 **acc_creation.java**
 
-![A close up of a logo Description automatically generated](media/4.png)
+![](media/4.png)
 
 **Login.java**
 
-![A close up of a logo Description automatically generated](media/5.png)
+![](media/5.png)
 
 **Home.java**
 
-![A screenshot of a cell phone Description automatically generated](media/6.png)
+![](media/6.png)
 
 **AccountInfo.java**
 
-![A close up of a logo Description automatically generated](media/7.png)
+![](media/7.png)
 
 **keylist.java**
 
-![A screenshot of a cell phone Description automatically generated](media/8.png)
+![](media/8.png)
 
 **Catsounds.java**
 
-![A close up of a map Description automatically generated](media/9.png)
+![](media/9.png)
 
 **Eat.java**
 
@@ -122,7 +122,7 @@ http://bestanimations.com/Animals/Mammals/Cats/cats/cute-kitty-animated-gif-59.g
 
 **Customize.java**
 
-![A close up of a sign Description automatically generated](media/12.png)
+![](media/12.png)
 
 **Cat.java**
 
@@ -132,7 +132,7 @@ http://bestanimations.com/Animals/Mammals/Cats/cats/cute-kitty-animated-gif-59.g
 
 **timecal.java**
 
-![A close up of a map Description automatically generated](media/14.png)
+![](media/14.png)
 
 **Program Output**
 
