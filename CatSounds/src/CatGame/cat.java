@@ -67,7 +67,7 @@ long seconds=Instant.now().getEpochSecond();;
     
     public void expgained(int a){
         
-        exp=exp+((a*0.5*expage)+(0.02*level)+(0.005*happiness));
+        exp=exp+((a*0.4*expage)+(0.02*level)+(0.005*happiness));
         if(exp>=expn)
         {
             exp=0;
