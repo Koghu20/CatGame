@@ -1,5 +1,5 @@
 # MUST READ !!!
-The game can be runned directly after compiling.
+The game can be run directly after compiling.
 
 # Instruction and Important notes.
 
