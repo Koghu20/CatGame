@@ -1,4 +1,4 @@
-![](Logo.jpg)
+![](media/Logo.png)
 
 ###
 
@@ -40,6 +40,7 @@ LECTURER NAME         : PROFESOR MADYA DR. NOR BADRUL ANUAR BIN JUMA&#39;AT
 We were asked to form our own team and the team was formed within the students of the tutorial class. We then elected the leader for our team , which was Kamal Kumar named our team Nova Gang.  We were then asked to register our team in the github and asked to fill in the google form. We then get to pick our own assignment project. After much consideration , we choose project 3, which is Cats-Are-Awesome.
 
 #
+
 ## Role and assigned work for each of the member
 
 There were 6 main requirement of the program.  These 6 requirements were split equally among 5 members of the team while taking the weightage of the each task into consideration. All members gave their 100 %
@@ -64,11 +65,8 @@ There were 6 main requirement of the program.  These 6 requirements were split e
 
 All members gave their 100% to make this project a success.
 
-
-
-
-
 #
+
 ## Project timeline
 
 Week 1
@@ -129,9 +127,6 @@ Week 7
 
 
 
-
-
-#
 ## Problem faced in accomplising this assingment and solution
 
 We encountered so many problems while compiling the program altogether as all of were new to JFrame. But through teamwork, we managed to overcome all the problems as all of our suggestion were taken into consideration and we all present at the meetings although our was already done or not needed that day.
