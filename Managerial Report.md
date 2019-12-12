@@ -20,7 +20,7 @@
 
 ###
 
-PROJECT TITLE           : My cat
+PROJECT TITLE           : My Cat
 
 LECTURER NAME         : PROFESOR MADYA DR. NOR BADRUL ANUAR BIN JUMA&#39;AT
 
@@ -28,7 +28,7 @@ LECTURER NAME         : PROFESOR MADYA DR. NOR BADRUL ANUAR BIN JUMA&#39;AT
 
 | NAME                  | MATRIC NUMBER |
 | --------------------- | ------------- |
-| KAMAL KUMAR           |               |
+| KAMAL KUMAR           | WIC190705     |
 | KOGHULAN RAJAMANICKAM | WIC190018     |
 | MEHDI PIROUZIAN       | WIC190707     |
 | JASSPER LAWRENCE      | WIC 190015    |
