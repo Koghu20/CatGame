@@ -1,4 +1,4 @@
-![](media/Logo.png)
+![](media/Logo.PNG)
 
 ​                                                    **FUNDAMENTALS OF PROGRAMMING**
 
