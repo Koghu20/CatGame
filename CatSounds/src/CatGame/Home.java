@@ -21,7 +21,7 @@ import javax.swing.Timer;
 public class Home extends javax.swing.JFrame {
     
 
-String gif="";
+String gif="";int hp,hu;
  public customize readdobj()
     { 
         customize c;
@@ -37,11 +37,27 @@ String gif="";
         }
          return  null;
     }
+ public Home(int a)
+ {
+        customize d=readdobj();
+        cat c=readobj();
+           c.expgained(a);
+           c.happiness+=5*a;
+           saveobj(c);
+       gif=d.Dhaircolor;
+       hp=(int)c.happiness;
+       hu=100-(int)c.hunger;
+          initComponents();
+ }
   public Home()
     {
         customize d=readdobj();
+        cat c=readobj();
        gif=d.Dhaircolor;
+       hp=(int)c.happiness;
+       hu=100-(int)c.hunger;
           initComponents();
+          
     }
   public void close()
     {
@@ -87,7 +103,8 @@ Timer timeage=new Timer(1800000,new ActionListener(){
        @Override
     public void actionPerformed(ActionEvent e) {
           cat c=readobj();
-
+           System.out.println(c.happiness);
+           System.out.println(c.hunger);
           double temp=c.hunger;
           timecal t=new timecal();
           t.readtime();
@@ -189,6 +206,12 @@ public cat readobj()
         jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
+        happ = new javax.swing.JProgressBar();
+        hun = new javax.swing.JProgressBar();
+        hi = new javax.swing.JLabel();
+        hunn = new javax.swing.JLabel();
+        lvl = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -209,7 +232,6 @@ public cat readobj()
 
         jButton4.setBackground(new java.awt.Color(0, 153, 102));
         jButton4.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(0, 0, 0));
         jButton4.setText(" TALK");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -220,7 +242,6 @@ public cat readobj()
 
         jButton3.setBackground(new java.awt.Color(0, 153, 102));
         jButton3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
         jButton3.setText(" FEED");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -231,7 +252,6 @@ public cat readobj()
 
         jButton2.setBackground(new java.awt.Color(0, 153, 102));
         jButton2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setText(" SHOP");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -242,7 +262,6 @@ public cat readobj()
 
         jButton1.setBackground(new java.awt.Color(0, 153, 102));
         jButton1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText(" PLAY");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -258,6 +277,39 @@ public cat readobj()
         jLabel2.setForeground(new java.awt.Color(0, 0, 51));
         jLabel2.setText(" HOME ");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 20, -1, 50));
+
+        jButton5.setBackground(new java.awt.Color(0, 153, 102));
+        jButton5.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jButton5.setText("Multiplayer Fighting");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 560, 210, 50));
+
+        happ.setBackground(new java.awt.Color(255, 102, 204));
+        happ.setValue(hp);
+        getContentPane().add(happ, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 170, 30));
+
+        hun.setBackground(new java.awt.Color(255, 102, 204));
+        hun.setValue(hu);
+        getContentPane().add(hun, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 170, 30));
+
+        hi.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        hi.setForeground(new java.awt.Color(0, 0, 0));
+        hi.setText("Happiness");
+        getContentPane().add(hi, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 110, 20));
+
+        hunn.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        hunn.setForeground(new java.awt.Color(0, 0, 0));
+        hunn.setText("Hunger");
+        getContentPane().add(hunn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 90, 30));
+
+        lvl.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lvl.setForeground(new java.awt.Color(0, 0, 0));
+        lvl.setText("Level :");
+        getContentPane().add(lvl, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 110, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/HOME1.jpg"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 620));
@@ -361,19 +413,21 @@ timeage.start();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-//    cat d=readobj();
-//    expn.setText(String.valueOf(d.expn));
-//    expage.setText(String.valueOf(d.expage));
-//    lvl.setText(String.valueOf(d.level));
-//        happy.setText(String.valueOf(d.happiness));
-//        hun.setText(String.valueOf(d.hunger));
-//        xp.setText(String.valueOf(d.exp));
+cat c=readobj();
+ hunn.setText(hunn.getText()+" "+hu+"%");
+hi.setText(hi.getText()+" "+hp+"%");
+lvl.setText(lvl.getText()+" "+c.level);
     }//GEN-LAST:event_formWindowActivated
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
 new AccountInfo().setVisible(true);
 this.dispose();
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+       new P1().setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     public static void main(String args[]) {
 
@@ -403,10 +457,15 @@ this.dispose();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JProgressBar happ;
+    private javax.swing.JLabel hi;
+    private javax.swing.JProgressBar hun;
+    private javax.swing.JLabel hunn;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -415,5 +474,6 @@ this.dispose();
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JLabel lvl;
     // End of variables declaration//GEN-END:variables
 }

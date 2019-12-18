@@ -132,10 +132,7 @@ public class keylist extends Applet implements KeyListener {
        cat c=readobj();
        c.money+=money*9;
        if((c.happiness+19)>=100)
-       {
-           c.happiness=100;
-           c.expgained(4);
-       }  
+           c.happiness=100;  
        else
        {    
        switch(money)
@@ -151,16 +148,12 @@ public class keylist extends Applet implements KeyListener {
            default:c.happiness+=2;
                break;
        }
-       if(money>4)
-           c.expgained(4);
        
        }
        
        saveobj(c);
-       //dispose();
        setSize(0,0);
-     
-       new Home().setVisible(true);
+      new Home().setVisible(true);
       
        
     } 
@@ -203,7 +196,7 @@ public class keylist extends Applet implements KeyListener {
         cat.paintIcon        (this, g, l*a, l*b);
         catR.paintIcon       (this, g, r*a, r*b);
         
-        coin.paintIcon       (this, g, i*100,  i*377);
+        coin.paintIcon       (this, g, i*x,  i*377);
         coin.paintIcon       (this, g, j*y,  j*100);
         coin.paintIcon       (this, g, k*1100, k*z);
         coin.paintIcon       (this, g, m*75,   m*s);
@@ -282,22 +275,10 @@ public class keylist extends Applet implements KeyListener {
             r=1;
             l=-2000;
            
-            if ((1055 <a+5&&a+5< 1180)&&(530 <b&&b< 600)){                          //home
-                if (i==-1)
-                    money+=1;
-                if (j==-1)
-                    money+=1;
-                if (k==-1)
-                    money+=1;
-                if (m==-1)
-                    money+=1;
-                if (n==-1)
-                    money+=1;
-                D=1;
-                repaint();
-               anyone();
+            if ((1055 <a+5&&a+5< 1180)&&(530 <b&&b< 600))                       //home
+               a-=5;
              
-            }
+            
             if ((15  <a+5&&a+5< 220)&&(290 <b&&b< 375))         //pitza
                a-=5;
             if ((295 <a+5&&a+5< 483)&&(290 <b&&b< 372))         //market
@@ -390,22 +371,8 @@ public class keylist extends Applet implements KeyListener {
             l=1;
             
             
-            if ((1055 <a-5&&a-5< 1180)&&(530 <b&&b< 600)) {                     //home
-               if (i==-1)
-                    money+=1;
-                if (j==-1)
-                    money+=1;
-                if (k==-1)
-                    money+=1;
-                if (m==-1)
-                    money+=1;
-                if (n==-1)
-                    money+=1;
-                D=1;
-                repaint();
-                anyone();
-               
-            } 
+            if ((1055 <a-5&&a-5< 1180)&&(530 <b&&b< 600))
+                a+=5;
             
                
             if ((15  <a-5&&a-5< 220)&&(290 <b&&b< 375))         //pitza
@@ -498,7 +465,9 @@ public class keylist extends Applet implements KeyListener {
         else if (e.getKeyCode()==KeyEvent.VK_UP){
             
             
-            if ((1055 <a&&a< 1180)&&(530 <b-5&&b-5< 600)) {             //home
+            if ((1055 <a&&a<= 1140)&&(530 <b-5&&b-5< 600))              //home
+               b+=5;
+            if ((1140 <a&&a< 1180)&&(530 <b-5&&b-5< 600)) {
                 if (i==-1)
                     money+=1;
                 if (j==-1)
@@ -511,8 +480,9 @@ public class keylist extends Applet implements KeyListener {
                     money+=1;
                 D=1;
                 repaint();
-                anyone();
+                anyone(); 
             }
+            
           
                
             if ((15  <a&&a< 220)&&(290 <b-5&&b-5< 375))         //pitza
@@ -602,21 +572,8 @@ public class keylist extends Applet implements KeyListener {
         else if (e.getKeyCode()==KeyEvent.VK_DOWN){
             
             
-            if ((1055 <a&&a< 1180)&&(530 <b+5&&b+5< 600)) {         //home
-                if (i==-1)
-                    money+=1;
-                if (j==-1)
-                    money+=1;
-                if (k==-1)
-                    money+=1;
-                if (m==-1)
-                    money+=1;
-                if (n==-1)
-                    money+=1;
-                D=1;
-                repaint();
-                anyone();
-            }
+            if ((1055 <a&&a< 1180)&&(530 <b+5&&b+5< 600))       //home
+                b-=5;
             if ((15  <a&&a< 220)&&(290 <b+5&&b+5< 375))         //pitza
                b-=5;
             if ((295 <a&&a< 483)&&(290 <b+5&&b+5< 372))         //market

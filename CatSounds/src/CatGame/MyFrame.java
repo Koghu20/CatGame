@@ -16,6 +16,7 @@ public class MyFrame extends JFrame {
     MyFrame()
     {
         keylist app=new keylist();
+        setSize(1200,750);
         add(app);
         app.init();
         app.start();

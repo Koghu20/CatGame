@@ -38,12 +38,12 @@ public class timecal {
     {
         ut2=Instant.now().getEpochSecond();
         ut3=ut2-ut1;
-               if(ut3<3000)
+               if(ut3<300)
             ut3=0;
-             else if(ut3==3000)
+             else if(ut3==300)
                 ut3=10;
              else{
-                 ut3/=3000;
+                 ut3/=300;
                  ut3=ut3*10;
              }
     }
