@@ -56,12 +56,12 @@ There were 6 main requirement of the program.  These 6 requirements were split e
 
 **Assigning work**
 
-| Kamal ( Leader) | Designing and programming of class shop and eat.Main Compiler |
-| --------------- | ------------------------------------------------------------ |
-| Mehdi           | Designing  and programming the class game.                   |
-| Jasper          | Designing and programming of class talk                      |
-| Koghulan        | Designing the calculation of levelling up and aging          |
-| Sameer          | Designing and programming the authentication                 |
+| Kamal ( Leader) | Designing and programming of class shop and eat and Main Compiler |
+| --------------- | ------------------------------------------------------------      |
+| Mehdi           | Designing  and programming the class game.                        |
+| Jasper          | Designing and programming of class talk                           |
+| Koghulan        | Designing the calculation of levelling up and aging               |
+| Sameer          | Designing and programming the authentication                      |
 
 All members gave their 100% to make this project a success.
 
