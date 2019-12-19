@@ -88,10 +88,10 @@ if(health<=0)
          }
        }
        else
-       {
+       {    count++;
            if(count>=4)
            {
-               health-=85;
+               health-=100;
                count=0;
            }
            else if(health==500)
@@ -99,10 +99,10 @@ if(health<=0)
            else{
             switch((String)weapon.getSelectedItem())
         {
-            case "knife":health+=15;
-            case "shotgun":health+=24;
-            case"Assault Rifles":health+=27;
-            case "Sniper Rifles":health+=38;
+            case "knife":health+=15;break;
+            case "shotgun":health+=24;break;
+            case"Assault Rifles":health+=27;break;
+            case "Sniper Rifles":health+=38;break;
          }
        } 
        }
@@ -115,8 +115,8 @@ if(health<=0)
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        weapon = new javax.swing.JComboBox<>();
-        attack = new javax.swing.JComboBox<>();
+        weapon = new javax.swing.JComboBox<String>();
+        attack = new javax.swing.JComboBox<String>();
         jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -124,9 +124,15 @@ if(health<=0)
         jProgressBar1 = new javax.swing.JProgressBar();
         jLabel6 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        status = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/person.png"))); // NOI18N
@@ -136,14 +142,14 @@ if(health<=0)
         weapon.setBackground(new java.awt.Color(204, 0, 0));
         weapon.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         weapon.setForeground(new java.awt.Color(255, 255, 255));
-        weapon.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "knife", "shotguns", "Assault Rifles", "Sniper Rifles" }));
+        weapon.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "knife", "shotguns", "Assault Rifles", "Sniper Rifles" }));
         weapon.setBorder(new javax.swing.border.MatteBorder(null));
         getContentPane().add(weapon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, 130, -1));
 
         attack.setBackground(new java.awt.Color(255, 51, 51));
         attack.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         attack.setForeground(new java.awt.Color(255, 255, 255));
-        attack.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Direct", "Sneak", " " }));
+        attack.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Direct", "Sneak", " " }));
         attack.setBorder(new javax.swing.border.MatteBorder(null));
         getContentPane().add(attack, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, 130, -1));
 
@@ -159,19 +165,16 @@ if(health<=0)
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 260, 140, 40));
 
         jLabel4.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Choose Weapon");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, -1, 20));
 
         jLabel5.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Attack Type");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, 140, -1));
 
         jLabel3.setFont(new java.awt.Font("Calibri", 1, 40)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("PLAYER 2");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, 190, 40));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, 200, 40));
 
         jProgressBar1.setBackground(new java.awt.Color(204, 0, 51));
         jProgressBar1.setForeground(new java.awt.Color(102, 204, 0));
@@ -192,6 +195,10 @@ if(health<=0)
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 0, -1, -1));
 
+        status.setForeground(new java.awt.Color(255, 255, 255));
+        status.setText("  ");
+        getContentPane().add(status, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 60, -1));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/attack.gif"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 320));
 
@@ -201,11 +208,7 @@ if(health<=0)
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         select();
         save();
-         try{
-         PrintWriter p=new PrintWriter(new FileOutputStream("health1.txt"));
-        p.print(500);
-        p.close();
-        }catch(Exception e){}
+        
         new P1(Apoints).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -213,10 +216,22 @@ if(health<=0)
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
     JOptionPane.showMessageDialog(null,"PLayer 1 won");
         health=500;
-            save();   
+            save(); 
+            try{
+         PrintWriter p=new PrintWriter(new FileOutputStream("health1.txt"));
+        p.print(500);
+        p.close();
+        }catch(Exception e){} 
     new Home(2).setVisible(true);
     dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+      if(health<=0)
+        status.setText("0/500");
+else
+    status.setText((int)health+"/500");
+    }//GEN-LAST:event_formWindowActivated
 
     /**
      * @param args the command line arguments
@@ -264,6 +279,7 @@ if(health<=0)
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JProgressBar jProgressBar1;
+    private javax.swing.JLabel status;
     private javax.swing.JComboBox<String> weapon;
     // End of variables declaration//GEN-END:variables
 }

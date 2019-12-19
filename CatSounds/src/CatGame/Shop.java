@@ -154,10 +154,9 @@ int arr[]=new int[6];
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 170, 40));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 190, 40));
 
         p4.setFont(new java.awt.Font("Calibri", 0, 20)); // NOI18N
-        p4.setForeground(new java.awt.Color(0, 0, 0));
         p4.setText(" ");
         getContentPane().add(p4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, 40, -1));
 
@@ -171,7 +170,6 @@ int arr[]=new int[6];
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 180, 180, -1));
 
         p5.setFont(new java.awt.Font("Calibri", 0, 20)); // NOI18N
-        p5.setForeground(new java.awt.Color(0, 0, 0));
         p5.setText(" ");
         getContentPane().add(p5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 240, 40, -1));
 
@@ -185,7 +183,6 @@ int arr[]=new int[6];
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(671, 180, 160, -1));
 
         p6.setFont(new java.awt.Font("Calibri", 0, 20)); // NOI18N
-        p6.setForeground(new java.awt.Color(0, 0, 0));
         p6.setText(" ");
         getContentPane().add(p6, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 240, 40, -1));
 
@@ -199,7 +196,6 @@ int arr[]=new int[6];
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(161, 420, 180, -1));
 
         p1.setFont(new java.awt.Font("Calibri", 0, 20)); // NOI18N
-        p1.setForeground(new java.awt.Color(0, 0, 0));
         p1.setText(" ");
         getContentPane().add(p1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 476, 40, 30));
 
@@ -213,7 +209,6 @@ int arr[]=new int[6];
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(401, 420, 170, -1));
 
         p3.setFont(new java.awt.Font("Calibri", 0, 20)); // NOI18N
-        p3.setForeground(new java.awt.Color(0, 0, 0));
         p3.setText(" ");
         getContentPane().add(p3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 476, 40, 30));
 
@@ -227,7 +222,6 @@ int arr[]=new int[6];
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(671, 420, 160, -1));
 
         p2.setFont(new java.awt.Font("Calibri", 0, 20)); // NOI18N
-        p2.setForeground(new java.awt.Color(0, 0, 0));
         p2.setText(" ");
         getContentPane().add(p2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 480, 30, 20));
 

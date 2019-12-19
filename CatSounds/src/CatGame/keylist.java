@@ -31,7 +31,8 @@ public class keylist extends Applet implements KeyListener {
     
     Random rand = new Random();
     protected int D=-1, a=1060,b=610,  i=1,j=1,k=1,m=1,n=1,  r=-2000,l=1,  x,y,z,s,w, money=0;
-    
+   
+
     private ImageIcon cat;
     private ImageIcon catR;
     private ImageIcon bush;
@@ -130,9 +131,13 @@ public class keylist extends Applet implements KeyListener {
     public void anyone(){
         JOptionPane.showMessageDialog(null,"you collected "+money+" coins and total collected money = "+money*9);
        cat c=readobj();
+       setSize(0,0);
        c.money+=money*9;
        if((c.happiness+19)>=100)
-           c.happiness=100;  
+       {
+           c.happiness=100;
+           saveobj(c);
+       }  
        else
        {    
        switch(money)
@@ -148,11 +153,9 @@ public class keylist extends Applet implements KeyListener {
            default:c.happiness+=2;
                break;
        }
-       
+       saveobj(c);
        }
        
-       saveobj(c);
-       setSize(0,0);
       new Home().setVisible(true);
       
        
@@ -478,9 +481,14 @@ public class keylist extends Applet implements KeyListener {
                     money+=1;
                 if (n==-1)
                     money+=1;
+                if (money==0)
+                    b+=5;
+                    
+                if (money!=0){
                 D=1;
                 repaint();
                 anyone(); 
+                }
             }
             
           

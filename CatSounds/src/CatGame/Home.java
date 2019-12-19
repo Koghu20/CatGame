@@ -64,13 +64,16 @@ String gif="";int hp,hu;
         WindowEvent winClosingEvent=new WindowEvent(this,WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
     }
-Timer timeage=new Timer(1800000,new ActionListener(){
+Timer timeage=new Timer(20000,new ActionListener(){
 @Override
  public void actionPerformed(ActionEvent e) {
  cat c=readobj();
-   c.expage();
-   c.age++;
- if(c.age>15)
+  timecal t=new timecal();
+          t.readtime();
+          t.mani();
+        c.age+=(t.getUt3());
+       c.expage();
+ if(c.age>=15)
  {
      time.stop(); 
      timeage.stop();
@@ -103,11 +106,11 @@ Timer timeage=new Timer(1800000,new ActionListener(){
        @Override
     public void actionPerformed(ActionEvent e) {
           cat c=readobj();
-           System.out.println(c.happiness);
-           System.out.println(c.hunger);
+
           double temp=c.hunger;
           timecal t=new timecal();
           t.readtime();
+          t.manipulate();
         c.happiness-=(t.getUt3());
         if(c.happiness<1)
              c.happiness=0;
@@ -286,7 +289,7 @@ public cat readobj()
                 jButton5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 560, 210, 50));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 560, 220, 50));
 
         happ.setBackground(new java.awt.Color(255, 102, 204));
         happ.setValue(hp);
@@ -297,17 +300,14 @@ public cat readobj()
         getContentPane().add(hun, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 170, 30));
 
         hi.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        hi.setForeground(new java.awt.Color(0, 0, 0));
         hi.setText("Happiness");
-        getContentPane().add(hi, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 110, 20));
+        getContentPane().add(hi, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 140, 20));
 
         hunn.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        hunn.setForeground(new java.awt.Color(0, 0, 0));
         hunn.setText("Hunger");
-        getContentPane().add(hunn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 90, 30));
+        getContentPane().add(hunn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 110, 30));
 
         lvl.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        lvl.setForeground(new java.awt.Color(0, 0, 0));
         lvl.setText("Level :");
         getContentPane().add(lvl, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 110, -1));
 
@@ -358,12 +358,14 @@ public cat readobj()
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-      new CatSound().setVisible(true);
+time.stop();
+        new CatSound().setVisible(true);
       close();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-new MyFrame().setVisible(true);        
+time.stop();
+        new MyFrame().setVisible(true);        
 close();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -408,7 +410,8 @@ timeage.start();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-   new Shop().setVisible(true);
+
+        new Shop().setVisible(true);
    close();
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -425,7 +428,8 @@ this.dispose();
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-       new P1().setVisible(true);
+time.stop();
+        new P1().setVisible(true);
        this.dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
 

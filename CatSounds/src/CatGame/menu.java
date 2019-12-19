@@ -237,7 +237,7 @@ int test = JOptionPane.showOptionDialog(null,
                     
                 }
                 else
-                    System.exit(0);
+                    new menu().setVisible(true);
                 break;
             }
         case "3": JOptionPane.showMessageDialog(null,"Please signup/login");new menu().setVisible(true);

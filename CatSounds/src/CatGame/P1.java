@@ -92,9 +92,10 @@ if(health<=0)
        }
        else
        {
+           count++;
            if(count>=4)
            {
-               health-=85;
+               health-=100;
                count=0;
            }
            else if(health==500)
@@ -102,10 +103,10 @@ if(health<=0)
            else{
             switch((String)weapon.getSelectedItem())
         {
-            case "knife":health+=15;
-            case "shotgun":health+=24;
-            case"Assault Rifles":health+=27;
-            case "Sniper Rifles":health+=38;
+            case "knife":health+=15;break;
+            case "shotgun":health+=24;break;
+            case"Assault Rifles":health+=27;break;
+            case "Sniper Rifles":health+=38;break;
          }
        } 
        }
@@ -213,7 +214,10 @@ if(health<=0)
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-status.setText((int)health+"/500");
+if(health<=0)
+        status.setText("0/500");
+else
+    status.setText((int)health+"/500");
     }//GEN-LAST:event_formWindowActivated
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

@@ -163,7 +163,7 @@ catch (Exception e)
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 170, -1));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 190, -1));
 
         jButton5.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jButton5.setText(" Purina");

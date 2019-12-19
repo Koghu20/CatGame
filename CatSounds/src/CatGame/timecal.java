@@ -32,7 +32,7 @@ public class timecal {
         ut1=sc.nextLong();
         sc.close();
         }catch(Exception e){}
-        manipulate();
+        
     }
     public void manipulate()
     {
@@ -47,7 +47,19 @@ public class timecal {
                  ut3=ut3*10;
              }
     }
-
+    public void mani()
+    {
+        ut2=Instant.now().getEpochSecond();
+        ut3=ut2-ut1;
+               if(ut3<1800)
+            ut3=0;
+             else if(ut3==1800)
+                ut3=1;
+             else{
+                 ut3/=1800;
+                 ut3=ut3*1;
+             }
+    }
     public long getUt3() {
         return ut3;
     }
